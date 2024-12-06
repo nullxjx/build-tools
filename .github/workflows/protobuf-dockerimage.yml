@@ -7,7 +7,7 @@ on:
     branches: [ main ]
     paths:
       - .github/workflows/protobuf-dockerimage.yml
-      - protobuf/Dockerfile
+      - ../../protobuf/Dockerfile-amd64
       - protobuf/protoc-wrapper
 
 jobs:
