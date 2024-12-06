@@ -1,4 +1,5 @@
-image_name="thexjx/build-protobuf:arm64"
+TARGETARCH=arm64
+image_name="thexjx/build-protobuf:${TARGETARCH}"
 
-docker buildx build --no-cache --platform linux/arm64 -t "${image_name}" -f Dockerfile-arm64 .
-# docker build --no-cache --platform linux/armd4 -t "${image_name}" -f Dockerfile-amd64 .
+docker buildx build --build-arg TARGETARCH=${TARGETARCH} \
+  --platform linux/${TARGETARCH} -t "${image_name}" -f Dockerfile .
